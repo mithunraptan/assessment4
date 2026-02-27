@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-21">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" path="src/main/java"/>
+	<classpathentry kind="src" path="src/main/resources"/>
+	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v9.0">
+		<attributes>
+			<attribute name="owner.project.facets" value="jst.web"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="lib" path="C:/Users/User/Downloads/jars-web-servlet and hibernate/jars-web/jaxb-api-2.3.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Downloads/jars-web-servlet and hibernate/jars-web/javax.transaction-api-1.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Downloads/jars-web-servlet and hibernate/jars-web/hibernate-core-5.6.15.Final.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Downloads/jars-web-servlet and hibernate/jars-web/javax.persistence-api-2.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Downloads/jars-web-servlet and hibernate/jars-web/hibernate-commons-annotations-5.1.2.Final (1).jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Downloads/jars-web-servlet and hibernate/jars-web/byte-buddy-1.12.18.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Downloads/jars-web-servlet and hibernate/jars-web/jandex-2.4.2.Final.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Downloads/jars-web-servlet and hibernate/jars-web/javassist-3.29.2-GA.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Downloads/jars-web-servlet and hibernate/jars-web/dom4j-2.1.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Downloads/jars-web-servlet and hibernate/jars-web/jboss-logging-3.4.3.Final.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Downloads/jars-web-servlet and hibernate/jars-web/antlr-2.7.7.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Downloads/jars-web-servlet and hibernate/jars-web/jaxb-core-4.0.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Downloads/jars-web-servlet and hibernate/jars-web/jaxb-runtime-4.0.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Downloads/jars-web-servlet and hibernate/jars-web/classmate-1.5.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Downloads/jars-web-servlet and hibernate/jars-web/postgresql-42.7.9.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Downloads/spring-expression-5.3.30.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Downloads/spring-core-5.3.30.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Downloads/spring-context-5.3.30.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Downloads/spring-beans-5.3.30.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Downloads/spring-jcl-5.3.30.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Downloads/spring-aop-5.3.30.jar"/>
+	<classpathentry kind="output" path="build/classes"/>
+</classpath>

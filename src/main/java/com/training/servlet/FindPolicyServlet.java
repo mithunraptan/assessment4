@@ -1,0 +1,55 @@
+package com.training.servlet;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import com.training.config.SpringConfig;
+import com.training.entity.InsurancePolicy;
+import com.training.service.UserService;
+
+/**
+ * Servlet implementation class FindPolicyServlet
+ */
+@WebServlet("/findPolicy")
+public class FindPolicyServlet extends HttpServlet {
+	 private UserService userService;
+
+	
+    @Override
+    public void init() throws ServletException {
+
+        // Start Spring container
+        ApplicationContext context =
+                new AnnotationConfigApplicationContext(SpringConfig.class);
+
+        userService = context.getBean(UserService.class);
+    }
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+	       String policyName = request.getParameter("policyName").trim();		
+	       InsurancePolicy insurancePolicy = userService.findInsurancePolicy(policyName);
+//	       System.out.println("printing policy name " + insurancePolicy.getPolicyName());
+	       request.setAttribute("insurancePolicy", insurancePolicy);
+	       if(insurancePolicy!=null) {
+	       request.getRequestDispatcher("policy-find-successfull-page.jsp")
+	        .forward(request, response);
+	       }
+	       else {
+		       request.getRequestDispatcher("policy-notfound-page.jsp")
+		        .forward(request, response);
+	       }
+	       
+	}
+
+
+
+}
