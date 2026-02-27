@@ -72,5 +72,11 @@ public class UserService {
 		
 	}
 
+	public void CustomerDeleteInsurancePolicy(long id) {
+		// TODO Auto-generated method stub
+		userDAO.customerDeletePolicy(id);
+		
+	}
+
 
 }

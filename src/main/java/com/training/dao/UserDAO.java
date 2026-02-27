@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.TypedQuery;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Repository;
 
@@ -125,32 +126,62 @@ public class UserDAO {
 	}
 
 	public void addPolicyToUser(String idParam, HttpServletRequest request) {
-		// TODO Auto-generated method stub
-		String name =(String)request.getAttribute("userName");
-		 EntityManager em = JPAUtil.getEntityManager();
-		 List<User> users = em.createQuery("FROM User u WHERE u.name = :name",
-                 User.class).setParameter("name", name).getResultList();
-		 long uId=0;
-		 if(!users.isEmpty()) {
-			 User user = users.get(0);
-			 uId = user.getId();
-		 }
-		 
-		 User userRef = em.getReference(User.class, uId);
-		 
 
-		 em.getTransaction().begin();;
-		 em.createQuery("UPDATE InsurancePolicy e SET e.user = :newValue WHERE e.id = :id", InsurancePolicy.class)
-		 .setParameter("newValue", userRef)
-		 .setParameter("id", idParam);
-		 em.getTransaction().commit();
-		 System.out.println("policy added to particular user successfully");
-		 
-		 
-		
-		
-		
-		
-		
+	    
+	    HttpSession session = request.getSession();
+	    String name = (String) session.getAttribute("userName");
+	    System.out.println("name issss"+ name);
+
+	    EntityManager em = JPAUtil.getEntityManager();
+
+	    // find user
+	    List<User> users = em.createQuery(
+	            "FROM User u WHERE u.name = :name",
+	            User.class)
+	            .setParameter("name", name)
+	            .getResultList();
+
+	    if (users.isEmpty()) {
+	        System.out.println("User not found");
+	        return;
+	    }
+
+	    User user = users.get(0);
+
+	    Long policyId = Long.parseLong(idParam);
+
+	    em.getTransaction().begin();
+
+	    int updated = em.createQuery(
+	            "UPDATE InsurancePolicy e SET e.user = :user WHERE e.id = :id")
+	            .setParameter("user", user)
+	            .setParameter("id", policyId)
+	            .executeUpdate();
+
+	    em.getTransaction().commit();
+
 	}
+
+	public void customerDeletePolicy(long id) {
+	    EntityManager em = JPAUtil.getEntityManager();
+	    try {
+	    	 em.getTransaction().begin();
+
+	         int updatedRows = em.createQuery(
+	                 "UPDATE InsurancePolicy p SET p.user = NULL WHERE p.id = :id")
+	                 .setParameter("id", id)
+	                 .executeUpdate();
+
+	         em.getTransaction().commit();
+
+	         System.out.println("Rows updated = " + updatedRows);
+
+	     } catch (Exception e) {
+	         em.getTransaction().rollback();
+	         e.printStackTrace();
+	     } finally {
+	         em.close();
+	     }
 }
+	}
+

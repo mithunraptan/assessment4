@@ -14,7 +14,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>here we will show all the insurace in tabular form</h1>
+<h1>All available policies</h1>
 	<table border="1">
 		<thead>
 			<tr>
@@ -46,6 +46,9 @@
 
 <%}} %>
 	</table>
+	
+	<br>
+	<a href="insurance-add-delete-find.jsp"><button>Back</button></a>
 
 </body>
 </html>

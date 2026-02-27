@@ -10,6 +10,8 @@
 <a href ="add-insurance.jsp"><button>Add Insurance</button></a> <br> <br>
 <a href ="delete-insurance.jsp"><button>Delete Insurance</button></a> <br> <br>
 <a href ="find-insurance.jsp"><button>Find Insurance</button></a> <br> <br>
+<a href ="show-all-insurance.jsp"><button>All Insurance</button></a> <br> <br>
+
 
 <a href ="adminLogout"><button>Logout</button></a> <br> <br>
 

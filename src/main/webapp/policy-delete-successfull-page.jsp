@@ -8,7 +8,7 @@
 </head>
 <body>
 <h1>Policy got deleted successfully</h1>
-<a href="insurance-add-delete-find.jsp"> go to controller page </a>
+<a href="insurance-add-delete-find.jsp"> <button>Back</button></a>
 
 </body>
 </html>

@@ -17,7 +17,7 @@
 <h3>Duration Month: <%= isp.getDurationMonth() %> </h3> 
 <h3>Premium / Month : <%=isp.getPremiumMonth() %></h3>
 
-<a href="insurance-add-delete-find.jsp"> go to controller page </a>
+<a href="insurance-add-delete-find.jsp"> <button>Back</button> </a>
 
 
 

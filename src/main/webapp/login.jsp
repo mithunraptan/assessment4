@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<h2>Login</h2>
+<h2>Welcome! Please choose your login role</h2>
 
 <h3>Admin :  <a href="admin-login.jsp"> Click here </a></h3>
 <h3>Customer : <a href="customer-login.jsp"> Click here </a></h3>

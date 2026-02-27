@@ -47,21 +47,8 @@ public class BuyPolicyServlet extends HttpServlet {
 			    }
 			    
 			   userService.addPolicyToUser(idParam,request);
-			    
-			    
-			    
-//		       String policyName = request.getParameter("policyName").trim();		
-//		       InsurancePolicy insurancePolicy = userService.findInsurancePolicy(policyName);
-////		       System.out.println("printing policy name " + insurancePolicy.getPolicyName());
-//		       request.setAttribute("insurancePolicy", insurancePolicy);
-//		       if(insurancePolicy!=null) {
-//		       request.getRequestDispatcher("policy-find-successfull-page.jsp")
-//		        .forward(request, response);
-//		       }
-//		       else {
-//			       request.getRequestDispatcher("policy-notfound-page.jsp")
-//			        .forward(request, response);
-//		       }
+			   request.getRequestDispatcher("customer-login-successfull.jsp")
+		        .forward(request, response);
 			}
 			
 		}

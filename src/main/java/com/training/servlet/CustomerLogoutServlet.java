@@ -9,16 +9,16 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class LogoutServlet
+ * Servlet implementation class CustomerLogoutServlet
  */
-//@WebServlet("/logout")
-public class LogoutServlet extends HttpServlet {
+@WebServlet("/logoutCustomer")
+public class CustomerLogoutServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public LogoutServlet() {
+    public CustomerLogoutServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -28,14 +28,12 @@ public class LogoutServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-//		response.getWriter().append("Served at: ").append(request.getContextPath());
 		HttpSession session = request.getSession(false); //false -> if session exist then simply returns it...wont create any new session.
 		if(session!=null) {
 			session.invalidate();
 		}
 		response.sendRedirect("login.jsp");
-		
-	}
+		}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
